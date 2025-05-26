@@ -7,7 +7,9 @@ let ibk = {
 };
 
 // Karte initialisieren
-let map = L.map("map").setView([ibk.lat, ibk.lng], 9);
+let map = L.map("map", {
+    fullscreenControl: true,
+}).setView([ibk.lat, ibk.lng], 9);
 
 // WMTS Hintergrundlayer der eGrundkarte Tirol
 let eGrundkarteTirol = {
@@ -50,3 +52,15 @@ L.control.layers({
 L.control.scale({
     imperial: false,
 }).addTo(map);
+
+// Etappe über Pulldown
+let pulldown = document.querySelector("#pulldown");
+for (let etappe of ETAPPEN){
+    let selected = "";
+    if (etappe.nr == 12) {
+        selected = "selected";
+    }
+    pulldown.innerHTML += `
+        <option ${selected} value="${etappe.user}">Etappe ${etappe.nr}: ${etappe.titel}</option>
+    `;
+}

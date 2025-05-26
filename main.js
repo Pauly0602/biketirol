@@ -57,7 +57,7 @@ L.control.scale({
 let pulldown = document.querySelector("#pulldown");
 for (let etappe of ETAPPEN){
     let selected = "";
-    if (etappe.nr == 12) {
+    if (etappe.nr == 31) {
         selected = "selected";
     }
     pulldown.innerHTML += `

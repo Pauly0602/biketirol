@@ -77,3 +77,6 @@ const controlElevation = L.control.elevation({
     elevationDiv: "#profile",
     height: 300,
 }).addTo(map);
+
+// Load track from url (allowed data types: "*.geojson", "*.gpx", "*.tcx")
+controlElevation.load("data/etappe12.gpx");
